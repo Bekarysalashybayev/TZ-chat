@@ -73,7 +73,7 @@ const onSubmit = () => {
   }
 
   &__body {
-    flex-grow: 1;
+    height: auto;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
