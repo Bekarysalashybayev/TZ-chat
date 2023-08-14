@@ -75,7 +75,7 @@ const onSubmit = () => {
   &__body {
     height: auto;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     scrollbar-gutter: stable;
     display: flex;
     flex-direction: column-reverse;
