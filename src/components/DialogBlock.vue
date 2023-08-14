@@ -66,7 +66,7 @@ const filteredDialogs = computed<IDialog[]>(() => {
   }
 
   &__body {
-    height: auto;
+    height: calc(100% - 11rem);
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
