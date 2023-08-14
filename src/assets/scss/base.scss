@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-block: rgba(26, 21, 31, 0.7);
+  --vt-c-white-selected: #3E4070;
+
+  --vt-c-black: #120C17;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-dark-1: rgba(255, 255, 255, 0.07);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: #7D7781;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-black);
+  --color-background-block: var(--vt-c-white-block);
+  --color-background-selected: var(--vt-c-white-selected);
+
+  --color-border: var(--vt-c-divider-dark-1);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-dark-1);
+  --color-text-1: var(--vt-c-text-dark-2);
+  --color-scroll: var(--vt-c-text-dark-2);
+}
+
+body {
+  height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

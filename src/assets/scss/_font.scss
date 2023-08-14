@@ -1,0 +1,23 @@
+@use "breakpoint" as *;
+
+html {
+  font-size: 10px;
+}
+
+@media screen and (max-width: $desktop){
+  html {
+    font-size: 8.89px;
+  }
+}
+
+@media screen and (max-width: $desktop_small){
+  html {
+    font-size: 7.78px;
+  }
+}
+
+@media screen and (max-width: $mobile){
+  html {
+    font-size: 7.22px;
+  }
+}
