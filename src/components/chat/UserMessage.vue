@@ -9,7 +9,7 @@
           <div class="title" v-if="!isAuthor && i === 0">{{ username }}</div>
           <div class="label">{{ mess }}</div>
         </div>
-        <div class="message-time label">17:49</div>
+        <div class="message-time label">{{ moment(new Date(time)).format('HH:mm') }}</div>
       </div>
     </div>
   </div>
@@ -18,6 +18,7 @@
 <script setup lang="ts">
 import type { IChat } from '@/api/dialogs'
 import { computed } from 'vue'
+import moment from 'moment'
 
 interface IMessage extends IChat {
   img?: string
