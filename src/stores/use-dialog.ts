@@ -9,6 +9,7 @@ const getNewChat = (chat: IChat[]) => {
     if (index === 0 || message.isAuthor === currentMessage.isAuthor) {
       currentMessage.text.push(...message.text)
       currentMessage.time = message.time
+      currentMessage.isAuthor = message.isAuthor
     } else {
       mergedChat.push(currentMessage)
       currentMessage = { text: [...message.text], time: message.time, isAuthor: message.isAuthor }
