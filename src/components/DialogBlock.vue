@@ -10,10 +10,8 @@
         <user-dialog
           :img="dialog.img"
           :title="dialog.username"
-          text=" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-        laudantium, totam rem aperiam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Quia, voluptatum!"
-          time="17:49"
+          :text="lastMessage(i).text"
+          :time="lastMessage(i).time"
           :selected="currentDialog === dialog.id"
           :is-last="i === dialogs.length - 1"
           v-for="(dialog, i) in filteredDialogs"
@@ -34,6 +32,7 @@ import UserDialog from '@/components/Dialog/UserDialog.vue'
 import { useDialog } from '@/stores/use-dialog'
 import { storeToRefs } from 'pinia'
 import type { IDialog } from '@/api/dialogs'
+import moment from 'moment'
 
 const { selectDialog } = useDialog()
 const changeDialog = (id: number) => {
@@ -50,6 +49,21 @@ const filteredDialogs = computed<IDialog[]>(() => {
     dialog.username.toLowerCase().startsWith(searchValue.value.toLowerCase())
   )
 })
+
+const lastMessage = (index: number): { time: string; text: string } => {
+  if (!filteredDialogs.value[index].chat.length)
+    return {
+      time: '',
+      text: ''
+    }
+  const lastText: string = filteredDialogs.value[index].chat.slice(-1)[0].text.slice(-1)[0]
+  const lastTime: string = filteredDialogs.value[index].chat.slice(-1)[0].time
+
+  return {
+    time: moment(new Date(lastTime)).format('HH:mm'),
+    text: lastText
+  }
+}
 </script>
 
 <style scoped lang="scss">

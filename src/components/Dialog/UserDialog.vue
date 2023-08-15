@@ -3,14 +3,18 @@
     <div class="user-dialog__img">
       <img :src="imageUrl" alt="picture" />
     </div>
-    <div class="user-dialog__info">
-      <div class="title">{{ title }}</div>
-      <div class="label">
-        {{ text }}
+    <div class="user-dialog__description">
+      <div class="user-dialog__data">
+        <div class="user-dialog__info">
+          <div class="title">{{ title }}</div>
+          <div class="label">
+            {{ text }}
+          </div>
+        </div>
+        <div class="user-dialog__time label">{{ time }}</div>
       </div>
       <be-divider v-if="!isLast" />
     </div>
-    <div class="user-dialog__time label">{{ time }}</div>
   </div>
 </template>
 
@@ -70,8 +74,16 @@ const imageUrl = computed(() => {
     }
   }
 
-  &__info {
+  &__description {
     margin-left: 2rem;
+    flex-grow: 1;
+  }
+
+  &__data {
+    display: flex;
+  }
+
+  &__info {
     flex-grow: 1;
 
     .title {

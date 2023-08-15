@@ -48,12 +48,12 @@ export const DIALOGS: IDialog[] = [
     id: 6,
     img: 'user-6.png',
     username: 'Erkebulan',
-    chat: JSON.parse(JSON.stringify(User_1))
+    chat: []
   },
   {
     id: 7,
     img: 'user-7.png',
     username: 'Adilbek',
-    chat: JSON.parse(JSON.stringify(User_1))
+    chat: []
   }
 ]

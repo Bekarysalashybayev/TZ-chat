@@ -1,12 +1,14 @@
 <template>
-  <div class="user-chat">
-    <user-message
-      :text="message.text"
-      :time="message.time"
-      :is-author="message.isAuthor"
-      :img="img"
-      :username="username"
-    />
+  <div v-for="(message, i) in chat" :key="i">
+    <div class="user-chat">
+      <user-message
+        :text="message.text"
+        :time="message.time"
+        :is-author="message.isAuthor"
+        :img="img"
+        :username="username"
+      />
+    </div>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ import UserMessage from '@/components/chat/UserMessage.vue'
 import type { IChat } from '@/api/dialogs'
 
 defineProps<{
-  message: IChat
+  chat: IChat[]
   img?: string
   username?: string
 }>()

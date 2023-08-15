@@ -12,9 +12,11 @@
       </div>
       <be-divider />
       <div class="chat-block__body scroll" ref="target">
-        <div v-for="(mess, i) in currentChat.chat" :key="i">
-          <user-chat :message="mess" :img="currentChat.img" :username="currentChat.username" />
-        </div>
+        <user-chat
+          :chat="currentChat.chat"
+          :img="currentChat.img"
+          :username="currentChat.username"
+        />
       </div>
       <be-divider />
       <div class="chat-block__head">
@@ -29,7 +31,7 @@ import ChatHeader from '@/components/chat/ChatHeader.vue'
 import BeDivider from '@/components/ui/BeDivider.vue'
 import UserChat from '@/components/chat/UserChat.vue'
 import ChatInput from '@/components/chat/ChatInput.vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useDialog } from '@/stores/use-dialog'
 import UnknownChat from '@/components/chat/UnknownChat.vue'
