@@ -22,7 +22,7 @@ export default {
 </script>
 <script setup lang="ts">
 import { useFocus } from '@vueuse/core'
-import { ref, StyleValue, useAttrs } from 'vue'
+import { ref, type StyleValue, useAttrs } from 'vue'
 
 defineProps<{
   placeholder?: string
