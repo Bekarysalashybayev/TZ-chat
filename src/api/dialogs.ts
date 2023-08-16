@@ -1,4 +1,4 @@
-import { User_1 } from '@/api/chats'
+import { User_1, User_2 } from '@/api/chats'
 
 export interface IChat {
   text: Array<string>
@@ -24,7 +24,7 @@ export const DIALOGS: IDialog[] = [
     id: 2,
     img: 'user-2.png',
     username: 'Beksultan',
-    chat: JSON.parse(JSON.stringify(User_1))
+    chat: JSON.parse(JSON.stringify(User_2))
   },
   {
     id: 3,
