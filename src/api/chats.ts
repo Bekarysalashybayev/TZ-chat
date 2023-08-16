@@ -37,14 +37,14 @@ export const User_1: IChat[] = [
       'facere fugiat inventore iste nam nihil numquam perferendis, quas quisquam repellat similique '
     ],
     time: '2023-08-15 17:50:00',
-    isAuthor: false
+    isAuthor: true
   },
   {
     text: [
       "Hello World, Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci amet atque blanditiis dicta dignissimos eaque eveniet vitae.',\n" +
         'facere fugiat inventore iste nam nihil numquam perferendis,'
     ],
-    time: '2023-08-15 17:51:00',
-    isAuthor: true
+    time: new Date(),
+    isAuthor: false
   }
 ]
