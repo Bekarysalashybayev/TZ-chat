@@ -67,6 +67,7 @@ const imageUrl = computed(() => {
   }
 
   .message {
+    width: auto;
     max-width: 75%;
     display: flex;
     align-items: flex-end;

@@ -31,7 +31,7 @@ import ChatHeader from '@/components/chat/ChatHeader.vue'
 import BeDivider from '@/components/ui/BeDivider.vue'
 import UserChat from '@/components/chat/UserChat.vue'
 import ChatInput from '@/components/chat/ChatInput.vue'
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useDialog } from '@/stores/use-dialog'
 import UnknownChat from '@/components/chat/UnknownChat.vue'
@@ -45,6 +45,13 @@ defineEmits(['backClick'])
 
 const { currentDialog, currentChat } = storeToRefs(useDialog())
 const { sendMessage } = useDialog()
+
+watch(
+  () => currentDialog.value,
+  () => {
+    y.value = 0
+  }
+)
 
 const inputValue = ref('')
 const inputMessage = ref<IChat>({
